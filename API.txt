@@ -1,0 +1,17 @@
+var unirest = require("unirest");
+
+var req = unirest("POST", "https://spotifypublicapidimasv1.p.rapidapi.com/getAlbum");
+
+req.headers({
+	"x-rapidapi-host": "SpotifyPublicAPIdimasV1.p.rapidapi.com",
+	"x-rapidapi-key": "147f702e4fmshfd9e8f0afeb9a4cp19a5bdjsnac88c553f8c0",
+	"content-type": "application/x-www-form-urlencoded"
+});
+
+req.form({});
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
